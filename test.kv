@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: 'horizontal'
+    BoxLayout:
+        orientation: 'vertical'
+        FileChooserListView:
+            size_hint_y: 10
+            on_selection: txtinput.text = self.selection and self.selection[0] or ''
+            dirselect: True
+            rootpath: 'D:\\'
+        TextInput:
+            id: txtinput
+            size_hint_y: 1
+        Button:
+            text: 'перенести фото'
+            size_hint_y: 1
+            on_release: app.orders()
+        Button:
+            text: 'посчитать фото'
+            size_hint_y: 1
+            on_release: app.count_photos()
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: txtcount
